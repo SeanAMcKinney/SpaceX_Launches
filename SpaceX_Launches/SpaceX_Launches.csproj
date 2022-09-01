@@ -164,7 +164,6 @@
     </Compile>
     <Compile Include="Models\Launches.cs" />
     <Compile Include="Models\LaunchWithPayload.cs" />
-    <Compile Include="Models\Payload.cs" />
     <Compile Include="Models\PayloadMass.cs" />
     <Compile Include="Models\Payloads.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
