@@ -3,10 +3,10 @@ Repo For SETWorks Task#2
 
 
 Be sure to install or restore the NuGet Packages
-by right clicking on the solution and Resoring NuGet Packages
-or installing
+by right clicking on the solution and Restoring NuGet Packages
+or installing these:
 
 jquery.datatables <br/>
-System.Net.Http
-Microsoft.AspNet.WebApi.Client
-Newtonsoft.Json
+System.Net.Http <br/>
+Microsoft.AspNet.WebApi.Client <br/>
+Newtonsoft.Json <br/>
