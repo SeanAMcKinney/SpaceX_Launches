@@ -6,7 +6,7 @@ Be sure to install or restore the NuGet Packages
 by right clicking on the solution and Resoring NuGet Packages
 or installing
 
-jquery.datatables
+jquery.datatables <br/>
 System.Net.Http
 Microsoft.AspNet.WebApi.Client
 Newtonsoft.Json
