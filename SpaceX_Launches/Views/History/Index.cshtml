@@ -18,27 +18,26 @@
                 <th scope="col">Date (unix)</th>
                 <th scope="col">Details</th>
                 <th scope="col">Event ID</th>
-                <th scope="col">Links</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>@item.Title</td>
-                    <td>@item.Event_date_utc</td>
-                    <td>@item.Event_date_unix</td>
-                    <td>@item.Details</td>
-                    <td>@item.Id</td>
-                    @if (item.Links.article == null)
-                    {
-                        <td class="info">-N/A-</td>
-                    }
-                    else
-                    {
-                        <td><a href="@item.Links.article" target="_blank">@item.Links.article</a></td>
-                    }
-                </tr>
+            <tr>
+                @if (item.Links.article == null)
+                {
+                    <td class="info">-N/A-</td>
+                }
+                else
+                {
+                    <td><a href="@item.Links.article" target="_blank">@item.Title</a></td>
+                }
+                <td>@item.Event_date_utc</td>
+                <td>@item.Event_date_unix</td>
+                <td>@item.Details</td>
+                <td>@item.Id</td>
+
+            </tr>
             }
         </tbody>
     </table>
