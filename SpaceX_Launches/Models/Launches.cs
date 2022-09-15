@@ -2,10 +2,10 @@
 
 public class Rootobject
 {
-    public Launches[] Property1 { get; set; }
+    public History[] Property1 { get; set; }
 }
 
-public class Launches
+public class History
 {
     public Fairings fairings { get; set; }
     public Links links { get; set; }

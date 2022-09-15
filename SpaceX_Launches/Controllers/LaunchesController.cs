@@ -15,7 +15,7 @@ namespace SpaceX_Launch_Website.Controllers
         public async Task<ActionResult> Index()
         {
             // Get JSON for launches, return list of launches
-            List<Launches> launchInfo = new List<Launches>();
+            List<History> launchInfo = new List<History>();
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(@"https://api.spacexdata.com/v5/");
@@ -26,7 +26,7 @@ namespace SpaceX_Launch_Website.Controllers
                 {
                     var launchResponse = response.Content.ReadAsStringAsync().Result;
 
-                    launchInfo = JsonConvert.DeserializeObject<List<Launches>>(launchResponse);
+                    launchInfo = JsonConvert.DeserializeObject<List<History>>(launchResponse);
                 }
             }
 
