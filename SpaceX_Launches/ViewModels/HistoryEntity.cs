@@ -16,7 +16,7 @@ public class HistoryInfo
     public string id { get; set; }
 }
 
-public class HistoryLinks
+public class HistorysLinks
 {
     public string article { get; set; }
 }

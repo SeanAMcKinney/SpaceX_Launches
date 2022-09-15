@@ -1,7 +1,55 @@
-﻿
+﻿@model IEnumerable<SpaceX_Launch_Website.ViewModels.HistoryData>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "SpaceX History Data";
 }
 
-<h2>Index</h2>
+<div id="top" class="top">
+    <h1 class="text-center">@ViewBag.Title</h1>
+    <p class="lead text-center">This Page Displays SpaxeX Historical Events</p>
+    <p><a href="https://github.com/r-spacex/SpaceX-API/blob/master/docs/README.md" class="btn btn-primary btn-lg">SpaceX-API &raquo;</a></p>
+</div>
 
+<div class="container">
+    <table id="myTable" class="table stripe table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Date (utc)</th>
+                <th scope="col">Date (unix)</th>
+                <th scope="col">Details</th>
+                <th scope="col">Event ID</th>
+                <th scope="col">Links</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Event_date_utc</td>
+                    <td>@item.Event_date_unix</td>
+                    <td>@item.Details</td>
+                    <td>@item.Id</td>
+                    @if (item.Links.article == null)
+                    {
+                        <td class="info">-N/A-</td>
+                    }
+                    else
+                    {
+                        <td><a href="@item.Links.article" target="_blank">@item.Links.article</a></td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#myTable").DataTable(
+                { "ordering": false }
+            );
+        })
+    </script>
+}

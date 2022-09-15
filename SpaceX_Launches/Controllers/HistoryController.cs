@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using SpaceX_Launches.Models;
+using SpaceX_Launch_Website.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ namespace SpaceX_Launches.Controllers
         public async Task<ActionResult> Index()
         {
             // Get JSON for history, return list of lhistory
-            List<History> historyInfo = new List<History>();
+            List<HistoryData> historyInfo = new List<HistoryData>();
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(@"https://api.spacexdata.com/v4/");
@@ -27,9 +27,10 @@ namespace SpaceX_Launches.Controllers
                 {
                     var historyResponse = response.Content.ReadAsStringAsync().Result;
 
-                    historyInfo = JsonConvert.DeserializeObject<List<History>>(historyResponse);
+                    historyInfo = JsonConvert.DeserializeObject<List<HistoryData>>(historyResponse);
                 }
             }
             return View(historyInfo);
         }
     }
+}

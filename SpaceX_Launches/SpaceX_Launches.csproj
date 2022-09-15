@@ -163,12 +163,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\History.cs" />
-    <Compile Include="Models\HistoryEntity.cs" />
-    <Compile Include="Models\Launches.cs" />
-    <Compile Include="Models\LaunchWithPayload.cs" />
-    <Compile Include="Models\PayloadMass.cs" />
-    <Compile Include="Models\Payloads.cs" />
+    <Compile Include="ViewModels\HistoryData.cs" />
+    <Compile Include="ViewModels\HistoryEntity.cs" />
+    <Compile Include="ViewModels\Launches.cs" />
+    <Compile Include="ViewModels\LaunchWithPayload.cs" />
+    <Compile Include="ViewModels\PayloadMass.cs" />
+    <Compile Include="ViewModels\Payloads.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
