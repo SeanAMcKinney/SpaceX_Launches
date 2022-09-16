@@ -10,27 +10,29 @@ using System.Web.Mvc;
 
 namespace SpaceX_Launches.Controllers
 {
-    public class HistoryController : Controller
+    public class ShipsController : Controller
     {
+        // GET: Ships
+
         // GET: History
         public async Task<ActionResult> Index()
         {
             // Get JSON for history, return list of lhistory
-            List<HistoryData> historyInfo = new List<HistoryData>();
+            List<ShipDetails> shipInfo = new List<ShipDetails>();
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(@"https://api.spacexdata.com/v4/");
                 client.DefaultRequestHeaders.Clear();
-                HttpResponseMessage response = await client.GetAsync("history");
+                HttpResponseMessage response = await client.GetAsync("ships");
 
                 if (response.IsSuccessStatusCode)
                 {
-                    var historyResponse = response.Content.ReadAsStringAsync().Result;
+                    var shipResponse = response.Content.ReadAsStringAsync().Result;
 
-                    historyInfo = JsonConvert.DeserializeObject<List<HistoryData>>(historyResponse);
+                    shipInfo = JsonConvert.DeserializeObject<List<ShipDetails>>(shipResponse);
                 }
             }
-            return View(historyInfo);
+            return View(shipInfo);
         }
     }
 }

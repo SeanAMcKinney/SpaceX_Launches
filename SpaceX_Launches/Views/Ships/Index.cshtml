@@ -1,0 +1,88 @@
+﻿@model IEnumerable<SpaceX_Launches.ViewModels.ShipDetails>
+@{
+    ViewBag.Title = "SpaceX Ship Details";
+}
+
+<div id="top" class="top">
+    <h1 class="text-center">@ViewBag.Title</h1>
+    <p class="lead text-center">This Page Displays SpaceX Ship Details</p>
+    <p><a href="https://github.com/r-spacex/SpaceX-API/blob/master/docs/README.md" class="btn btn-primary btn-lg">SpaceX-API &raquo;</a></p>
+</div>
+
+<div class="container">
+    <table id="myTable" class="table stripe table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Legacy ID</th>
+                <th scope="col">Type</th>
+                <th scope="col">Model</th>
+                <th scope="col">Class</th>
+                <th scope="col">Mass in Kg</th>
+                <th scope="col">Mass in Lbs</th>
+                <th scope="col">Year Built</th>
+                <th scope="col">Home Port</th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><a href="@item.link" target="_blank">@item.name</a></td>
+                    @if (item.legacy_id == null)
+                    {
+                        <td class="info">-N/A-</td>
+                    }
+                    else
+                    {
+                        <td>@item.legacy_id</td>
+                    }
+                    <td>@item.type</td>
+                    <td>@item.model</td>
+                    @if (item._class == null)
+                    {
+                        <td class="info">-N/A-</td>
+                    }
+                    else
+                    {
+                        <td>@item._class</td>
+                    }
+                    @if (item.mass_kg == null)
+                    {
+                        <td class="info">-N/A-</td>
+                    }
+                    else
+                    {
+                        <td>@item.mass_kg</td>
+                    }
+                    @if (item.mass_lbs == null)
+                    {
+                        <td class="info">-N/A-</td>
+                    }
+                    else
+                    {
+                        <td>@item.mass_lbs</td>
+                    }
+                    @if (item.year_built == null)
+                    {
+                        <td class="info">-N/A-</td>
+                    }
+                    else
+                    {
+                        <td>@item.year_built</td>
+                    }
+                    <td>@item.home_port</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#myTable").DataTable(
+                { "ordering": false }
+            );
+        })
+    </script>
+}

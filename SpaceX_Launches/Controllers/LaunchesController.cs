@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using SpaceX_Launch_Website.ViewModels;
+using SpaceX_Launches.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

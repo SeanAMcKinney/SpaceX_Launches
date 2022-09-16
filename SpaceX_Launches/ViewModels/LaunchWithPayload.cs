@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SpaceX_Launch_Website.ViewModels
+namespace SpaceX_Launches.ViewModels
 {
     public class LaunchWithPayload
     {
