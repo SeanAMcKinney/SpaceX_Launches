@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace SpaceX_Launch_Website.Controllers
+namespace SpaceX_Launches.Controllers
 {
     public class LaunchesController : Controller
     {
