@@ -157,16 +157,22 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HistoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LaunchesController.cs" />
+    <Compile Include="Controllers\LaunchpadsController.cs" />
     <Compile Include="Controllers\ShipsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\CompanyEntity.cs" />
+    <Compile Include="ViewModels\CompanyInfo.cs" />
     <Compile Include="ViewModels\HistoryData.cs" />
     <Compile Include="ViewModels\HistoryEntity.cs" />
     <Compile Include="ViewModels\Launches.cs" />
+    <Compile Include="ViewModels\LaunchpadInfo.cs" />
+    <Compile Include="ViewModels\LaunchpadsEntity.cs" />
     <Compile Include="ViewModels\LaunchWithPayload.cs" />
     <Compile Include="ViewModels\PayloadMass.cs" />
     <Compile Include="ViewModels\Payloads.cs" />
@@ -449,6 +455,8 @@
     <Content Include="Views\Launches\Index.cshtml" />
     <Content Include="Views\History\Index.cshtml" />
     <Content Include="Views\Ships\Index.cshtml" />
+    <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\Launchpads\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

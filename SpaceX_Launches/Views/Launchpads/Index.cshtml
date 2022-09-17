@@ -1,0 +1,59 @@
+﻿@model IEnumerable<SpaceX_Launches.ViewModels.LaunchpadInfo>
+@{
+    ViewBag.Title = "SpaceX Launchpad Information";
+}
+
+<div id="top" class="top">
+    <h1 class="text-center">@ViewBag.Title</h1>
+    <p class="lead text-center">This Page Displays SpaceX Launchpad Information</p>
+    <p><a href="https://github.com/r-spacex/SpaceX-API/blob/master/docs/README.md" class="btn btn-primary btn-lg">SpaceX-API &raquo;</a></p>
+</div>
+
+<div class="container">
+    <table id="myTable" class="table stripe table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Location</th>
+                <th scope="col">Region</th>
+                <th scope="col">Launch Attempts</th>
+                <th scope="col">Launch Successes</th>
+                <th scope="col">Rockets</th>
+                <th scope="col">Timezone</th>
+                <th scope="col">Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.name</td>
+                    <td>@item.full_name</td>
+                    <td>@item.locality</td>
+                    <td>@item.region</td>
+                    <td>@item.launch_attempts</td>
+                    <td>@item.launch_successes</td>
+                    <td>
+                        @foreach (var rocket in item.rockets)
+                        {
+                            Console.WriteLine(item.rockets);
+                        }
+                    </td>
+                    <td>@item.timezone</td>
+                    <td>@item.details</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#myTable").DataTable(
+                { "ordering": false }
+            );
+        })
+    </script>
+}
